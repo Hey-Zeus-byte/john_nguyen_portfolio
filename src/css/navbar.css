@@ -1,0 +1,16 @@
+.navbar {
+  font-size: 25px;
+}
+
+.navbar-home {
+  text-decoration: none;
+  margin: 100px;
+  margin-left: 50px;
+  color: darkgreen;
+}
+
+.navbar-tabs {
+  text-decoration: none;
+  margin: 10px;
+  color: grey;
+}
