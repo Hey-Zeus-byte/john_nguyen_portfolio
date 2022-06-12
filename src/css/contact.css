@@ -1,0 +1,24 @@
+.contact-head {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  padding: 10px;
+}
+
+.text-size1 {
+  font-size: 30px;
+}
+
+.text-size2 {
+  font-size: 15px;
+}
+
+.input-body {
+  position: absolute;
+  margin: auto;
+  max-width: 100;
+}
+input {
+  width: 600px;
+}
