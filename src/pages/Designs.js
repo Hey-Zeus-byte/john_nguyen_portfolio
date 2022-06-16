@@ -170,7 +170,13 @@ const Designs = () => {
               objectPosition: "50% 50%",
             }}
           ></img>
-          <button>View more on Dribble</button>
+          <a
+            href="https://dribbble.com/johnuxui"
+            target="_blank"
+            rel="noreferrer"
+          >
+            <button>View more on Dribble</button>
+          </a>
         </div>
         <div>
           <h1>Food Blog</h1>

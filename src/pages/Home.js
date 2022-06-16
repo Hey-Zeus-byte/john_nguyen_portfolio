@@ -16,6 +16,7 @@ const Home = () => {
             textAlign: "left",
           }}
         />
+        {/* Gotta fix the src */}
       </a>
       <h1>Hi there!</h1>
       <h1>

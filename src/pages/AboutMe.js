@@ -3,7 +3,11 @@ import React from "react";
 const AboutMe = () => {
   return (
     <div>
-      <h1>This is the About Me page.</h1>
+      <div>
+        <h6>
+          <span>Hello there, I'm John.</span>A food lover, blogger
+        </h6>
+      </div>
     </div>
   );
 };
