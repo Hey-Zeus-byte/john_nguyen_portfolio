@@ -1,15 +1,11 @@
 #footer {
-  position: fixed;
+  /* position: relative; */
+  border-top: 3px solid black;
+  justify-content: space-between;
   padding: 10px 10px 0px 10px;
+  left: 0;
   bottom: 0;
+  right: 0;
   width: 100%;
   background: lightgray;
 }
-
-/* #footer {
-  position: absolute;
-  bottom: 0;
-  width: 100%;
-  background-color: lightgray;
-  text-align: center;
-} */
