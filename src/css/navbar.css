@@ -4,13 +4,13 @@
 
 .navbar-home {
   text-decoration: none;
-  margin: 100px;
-  margin-left: 50px;
+  margin: 50px;
+  margin-right: 300px;
   color: darkgreen;
 }
 
 .navbar-tabs {
   text-decoration: none;
-  margin: 10px;
+  margin: 10px 15px;
   color: grey;
 }

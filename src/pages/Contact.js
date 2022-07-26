@@ -1,7 +1,14 @@
 import React from "react";
 import "../css/contact.css";
+import styled from "styled-components";
 
 const Contact = () => {
+  const Container = styled.div`
+    // border: 2px solid red;
+    position: relative;
+    display: block;
+  `;
+
   return (
     <div>
       <div className="contact-head">
@@ -9,7 +16,7 @@ const Contact = () => {
         <h4 className="text-size2">
           getting coffee, freelancing, or any other inquiries
         </h4>
-        <form>
+        <Container>
           <input placeholder="Name"></input>
           <input placeholder="Email"></input>
           <textarea
@@ -17,7 +24,7 @@ const Contact = () => {
             style={{resize: "none"}}
           ></textarea>
           <button>Submit</button>
-        </form>
+        </Container>
       </div>
     </div>
   );
