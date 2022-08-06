@@ -14,16 +14,17 @@ const Footer = () => {
   `;
 
   const Container = styled.div`
-    // border: 2px solid red;
-    position: absolute;
-    margin: -100px 300px;
+    border: 2px solid red;
+    position: relative;
+    margin: -25px 300px;
     display: inline-flex;
   `;
 
   const ContainerCopyRight = styled.div`
-    // border: 2px solid red;
+    border: 2px solid red;
     font-size: 13px;
     margin: -10px;
+    display: inline-flex;
   `;
 
   return (
@@ -48,17 +49,8 @@ const Footer = () => {
         <p style={{margin: "5px 20px 15px 20px"}}>2021 John Nguyen</p>
         <p style={{margin: "-5px 20px 25px 20px"}}>Made In San Francisco, CA</p>
       </ContainerCopyRight>
-      <strong
-        style={{
-          fontSize: "20px",
-          position: "absolute",
-          // border: "2px solid red",
-          margin: "-150px 300px",
-        }}
-      >
-        LET'S CONNECT
-      </strong>
       <Container>
+        <strong>LET'S CONNECT</strong>
         <a
           href="https://www.linkedin.com/in/johnguyen/"
           target="_blank"
