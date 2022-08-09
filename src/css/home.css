@@ -1,5 +1,5 @@
 .float-container {
-  border: 3px solid gray;
+  /* border: 3px solid gray; */
   padding: 20px;
   display: flex;
 }
