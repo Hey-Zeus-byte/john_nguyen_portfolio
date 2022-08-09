@@ -11,6 +11,8 @@ const EmailLink = styled.a`
   data-auto-recognition: true;
   text-decoration: none;
   color: black;
+  font-size: 16px;
+  letter-spacing: 0.2em;
 
   &:hover {
     color: red;
@@ -25,12 +27,12 @@ const FooterFlexWrapperFirst = styled.div`
   height: auto;
 `;
 
-const FooterFlexWrapperSecond = styled.div`
+const LinkWrapper = styled.div`
   display: flex;
   flex-direction: row;
-  justify-content: flex-end;
-  align-items: center;
-  height: auto;
+  justify-content: center;
+  align-items: flex-end;
+  gap: 12px;
 `;
 
 const FooterLinkImage = styled.img`
@@ -43,21 +45,37 @@ const Footer = () => {
     <FooterContainer>
       <ContentWrapper>
         <FooterFlexWrapperFirst>
-          <p>GET IN TOUCH</p>
+          <p
+            style={{
+              fontSize: "13px",
+              fontWeight: "bold",
+              letterSpacing: "0.1em",
+            }}
+          >
+            GET IN TOUCH
+          </p>
           <p>
             <EmailLink href="mailto:Johnuxui@gmail.com">
               Johnuxui@gmail.com
             </EmailLink>
           </p>
-          <FooterLinkImage
-            src="https://static.wixstatic.com/media/71546a_eb2b4226bfda49229e0bbd4b8ef1724c~mv2.png/v1/fill/w_25,h_25,al_c,lg_1,q_85,enc_auto/baseline_copyright_black_18dp.png"
-            alt="baseline_copyright_black_18dp.png"
-          ></FooterLinkImage>
-          <p>2021 John Nguyen</p>
-          <p>Made In San Francisco, CA</p>
         </FooterFlexWrapperFirst>
-        <FooterFlexWrapperSecond>
-          <strong>LET'S CONNECT</strong>
+        <FooterLinkImage
+          src="https://static.wixstatic.com/media/71546a_eb2b4226bfda49229e0bbd4b8ef1724c~mv2.png/v1/fill/w_25,h_25,al_c,lg_1,q_85,enc_auto/baseline_copyright_black_18dp.png"
+          alt="baseline_copyright_black_18dp.png"
+        ></FooterLinkImage>
+        <p>2021 John Nguyen</p>
+        <p>Made In San Francisco, CA</p>
+        <strong
+          style={{
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "flex-end",
+          }}
+        >
+          LET'S CONNECT
+        </strong>
+        <LinkWrapper>
           <a
             href="https://www.linkedin.com/in/johnguyen/"
             target="_blank"
@@ -98,7 +116,7 @@ const Footer = () => {
               alt="website"
             ></FooterLinkImage>
           </a>
-        </FooterFlexWrapperSecond>
+        </LinkWrapper>
       </ContentWrapper>
     </FooterContainer>
   );
