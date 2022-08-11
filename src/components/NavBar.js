@@ -13,7 +13,9 @@ const NavFlexWrapper = styled.div`
   height: 84px;
 `;
 
-const NavLinkWrapper = styled.div``;
+const NavLinkWrapper = styled.div`
+  padding-right: 100px;
+`;
 
 const NavLink = styled(Link)`
   text-decoration: none;
@@ -21,6 +23,7 @@ const NavLink = styled(Link)`
   font-size: 11px;
   line-height: 12px;
   padding: 9px 20px;
+  font-weight: bold;
 
   &:hover {
     color: #000000;
@@ -31,6 +34,7 @@ const NavHomeLink = styled(Link)`
   text-decoration: none;
   color: #407c51;
   font-size: 25px;
+  padding-left: 100px;
 `;
 
 const NavBar = () => {
@@ -40,10 +44,10 @@ const NavBar = () => {
         <NavFlexWrapper>
           <NavHomeLink to="/">John Nguyen</NavHomeLink>
           <NavLinkWrapper>
-            <NavLink to="/about-me">About Me</NavLink>
-            <NavLink to="/designs">Designs</NavLink>
-            <NavLink to="/projects">Projects</NavLink>
-            <NavLink to="/contact">Contact</NavLink>
+            <NavLink to="/about-me">ABOUT ME</NavLink>
+            <NavLink to="/designs">DESIGNS</NavLink>
+            <NavLink to="/projects">PROJECTS</NavLink>
+            <NavLink to="/contact">CONTACT</NavLink>
             {/* <Link to="/projects/yumyum"></Link>
         <Link to="/projects/nonprofit"></Link>
         <Link to="/projects/joblify"></Link>
