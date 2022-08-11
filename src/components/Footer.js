@@ -5,8 +5,11 @@ import {ContentWrapper} from "./ContentWrapper";
 const FooterContainer = styled.div`
   background-color: rgba(247, 245, 255);
   border-color: rgba(199, 199, 199);
-  border: 5px solid black;
+  /* border: 5px solid black; */
+  display: flex;
   flex-direction: row;
+  justify-content: space-evenly;
+  align-items: baseline;
 `;
 
 const EmailLink = styled.a`
@@ -22,23 +25,16 @@ const EmailLink = styled.a`
 `;
 
 const FooterFlexWrapperFirst = styled.div`
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  align-items: flex-start;
   height: auto;
-  border: 3px solid green;
-  padding: 0 900px 0 100px;
+  /* border: 3px solid green; */
+  /* margin: 0 800px 0 100px; */
 `;
 
 const FooterFlexWrapperSecond = styled.div`
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  align-items: flex-start;
   height: auto;
-  border: 3px solid yellow;
-  margin: 0 725px 0 550px;
+  /* border: 3px solid yellow; */
+  justify-content: center;
+  align-items: baseline;
 `;
 
 const LinkWrapper = styled.div`
@@ -47,7 +43,7 @@ const LinkWrapper = styled.div`
   justify-content: center;
   align-items: flex-end;
   gap: 12px;
-  border: 3px solid red;
+  /* border: 3px solid red; */
 `;
 
 const FooterLinkImage = styled.img`
@@ -57,8 +53,8 @@ const FooterLinkImage = styled.img`
 
 const Footer = () => {
   return (
-    <FooterContainer>
-      <ContentWrapper>
+    <ContentWrapper>
+      <FooterContainer>
         <FooterFlexWrapperFirst>
           <p
             style={{
@@ -74,11 +70,20 @@ const Footer = () => {
               Johnuxui@gmail.com
             </EmailLink>
           </p>
-          <FooterLinkImage
-            src="https://static.wixstatic.com/media/71546a_eb2b4226bfda49229e0bbd4b8ef1724c~mv2.png/v1/fill/w_25,h_25,al_c,lg_1,q_85,enc_auto/baseline_copyright_black_18dp.png"
-            alt="baseline_copyright_black_18dp.png"
-          ></FooterLinkImage>
-          <p>2021 John Nguyen</p>
+          <div
+            style={{
+              // border: "2px solid red",
+              display: "flex",
+              justifyContent: "center",
+              alignItems: "baseline",
+            }}
+          >
+            <FooterLinkImage
+              src="https://static.wixstatic.com/media/71546a_eb2b4226bfda49229e0bbd4b8ef1724c~mv2.png/v1/fill/w_25,h_25,al_c,lg_1,q_85,enc_auto/baseline_copyright_black_18dp.png"
+              alt="baseline_copyright_black_18dp.png"
+            ></FooterLinkImage>
+            <p>2021 John Nguyen</p>
+          </div>
           <p>Made In San Francisco, CA</p>
         </FooterFlexWrapperFirst>
         <FooterFlexWrapperSecond>
@@ -134,8 +139,8 @@ const Footer = () => {
             </a>
           </LinkWrapper>
         </FooterFlexWrapperSecond>
-      </ContentWrapper>
-    </FooterContainer>
+      </FooterContainer>{" "}
+    </ContentWrapper>
   );
 };
 
