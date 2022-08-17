@@ -1,27 +1,57 @@
 import React from "react";
-import "../css/home.css";
+import styled from "styled-components";
+import {ContentWrapper} from "../components/ContentWrapper";
+
+const UpperHalfHomePage = styled.div`
+  background-color: rgb(250, 250, 250);
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+`;
+
+const GreyLine = styled.div`
+  display: block;
+  background-color: grey;
+  height: 175px;
+  width: 1px;
+  margin: 0 50% 0 50%;
+`;
 
 const Home = () => {
   return (
-    <div className="float-container">
-      <div className="float-child-left">
+    <ContentWrapper>
+      <UpperHalfHomePage>
         <a href="/about-me">
           <img
             src="https://static.wixstatic.com/media/71546a_3f715f9bdae94883b91336d257fba2c5~mv2.gif"
             alt=""
+            style={{
+              width: "406px",
+              height: "405px",
+              transitionDuration: "600ms",
+            }}
           />
         </a>
-      </div>
-      <div className="float-child-right">
-        <h1 style={{margin: "2px"}}>Hi there!</h1>
-        <h1 style={{margin: "2px"}}>My name is John</h1>
-        <h1 style={{margin: "2px"}}>
-          and I'm a<span style={{color: "darkgreen"}}> UX & UI</span>
+        <h1
+          style={{
+            fontSize: "40px",
+            display: "flex",
+            flexDirection: "column",
+            lineHeight: "1.2em",
+          }}
+        >
+          <span>Hi there!</span>
+          <span>My name is John</span>
+          <span>and I'm a</span>
+          <span style={{color: "#407C51"}}> UX & UI </span>
+          <span>designer.</span>
         </h1>
-        <h1 style={{margin: "2px"}}>designer.</h1>
-      </div>
+      </UpperHalfHomePage>
       <div>
-        <h4>PROJECTS</h4>
+        <h4 style={{color: "#919191", fontSize: "15px", textAlign: "center"}}>
+          PROJECTS
+        </h4>
+        <GreyLine></GreyLine>
         <img
           src="https://static.wixstatic.com/media/71546a_c5ed89a378a74c8ebe3c6efd6f7f6a38~mv2.png/v1/fill/w_193,h_405,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/Group%201421.png"
           alt=""
@@ -53,7 +83,7 @@ const Home = () => {
           }}
         ></img>
       </div>
-    </div>
+    </ContentWrapper>
   );
 };
 
