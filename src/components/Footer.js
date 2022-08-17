@@ -5,11 +5,8 @@ import {ContentWrapper} from "./ContentWrapper";
 const FooterContainer = styled.div`
   background-color: rgba(247, 245, 255);
   border-color: rgba(199, 199, 199);
-  /* border: 5px solid black; */
   display: flex;
-  flex-direction: row;
   justify-content: space-evenly;
-  align-items: baseline;
 `;
 
 const EmailLink = styled.a`
@@ -26,24 +23,27 @@ const EmailLink = styled.a`
 
 const FooterFlexWrapperFirst = styled.div`
   height: auto;
-  /* border: 3px solid green; */
-  /* margin: 0 800px 0 100px; */
 `;
+
+const WithinFooterFirst = styled(FooterFlexWrapperFirst)`
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+`;
+
+const WithinFooterFirstSecond = styled(FooterFlexWrapperFirst)``;
 
 const FooterFlexWrapperSecond = styled.div`
   height: auto;
-  /* border: 3px solid yellow; */
-  justify-content: center;
-  align-items: baseline;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 50px;
 `;
 
 const LinkWrapper = styled.div`
   display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: flex-end;
   gap: 12px;
-  /* border: 3px solid red; */
 `;
 
 const FooterLinkImage = styled.img`
@@ -70,12 +70,9 @@ const Footer = () => {
               Johnuxui@gmail.com
             </EmailLink>
           </p>
-          <div
+          <WithinFooterFirst
             style={{
-              // border: "2px solid red",
-              display: "flex",
-              justifyContent: "center",
-              alignItems: "baseline",
+              fontSize: "12px",
             }}
           >
             <FooterLinkImage
@@ -83,19 +80,17 @@ const Footer = () => {
               alt="baseline_copyright_black_18dp.png"
             ></FooterLinkImage>
             <p>2021 John Nguyen</p>
-          </div>
-          <p>Made In San Francisco, CA</p>
-        </FooterFlexWrapperFirst>
-        <FooterFlexWrapperSecond>
-          <strong
+          </WithinFooterFirst>
+          <WithinFooterFirstSecond
             style={{
-              display: "flex",
-              justifyContent: "center",
-              alignItems: "flex-end",
+              fontSize: "12px",
             }}
           >
-            LET'S CONNECT
-          </strong>
+            Made In San Francisco, CA
+          </WithinFooterFirstSecond>
+        </FooterFlexWrapperFirst>
+        <FooterFlexWrapperSecond>
+          <strong>LET'S CONNECT</strong>
           <LinkWrapper>
             <a
               href="https://www.linkedin.com/in/johnguyen/"
@@ -139,7 +134,7 @@ const Footer = () => {
             </a>
           </LinkWrapper>
         </FooterFlexWrapperSecond>
-      </FooterContainer>{" "}
+      </FooterContainer>
     </ContentWrapper>
   );
 };
