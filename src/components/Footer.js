@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import {ContentWrapper} from "./ContentWrapper";
+import { ContentWrapper } from "./ContentWrapper";
 
 const FooterContainer = styled.div`
   background-color: rgba(247, 245, 255);
@@ -13,7 +13,6 @@ const FooterContainer = styled.div`
 `;
 
 const EmailLink = styled.a`
-  data-auto-recognition: true;
   text-decoration: none;
   color: black;
   font-size: 16px;
