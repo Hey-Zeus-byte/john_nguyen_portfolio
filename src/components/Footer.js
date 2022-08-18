@@ -21,24 +21,31 @@ const EmailLink = styled.a`
   }
 `;
 
-const FooterFlexWrapperFirst = styled.div`
+const LeftHalfOfFooterContainer = styled.div`
   height: auto;
 `;
 
-const WithinFooterFirst = styled(FooterFlexWrapperFirst)`
+const TextFontTypeOne = styled(LeftHalfOfFooterContainer)`
   display: flex;
   flex-direction: row;
   align-items: center;
+  font-size: 12px;
 `;
 
-const WithinFooterFirstSecond = styled(FooterFlexWrapperFirst)``;
+const TextFontTypeTwo = styled(TextFontTypeOne)``;
 
-const FooterFlexWrapperSecond = styled.div`
+const RightHalfOfFooterContainer = styled.div`
   height: auto;
   display: flex;
   flex-direction: column;
   align-items: center;
   padding: 50px;
+`;
+
+const BoldText = styled.p`
+  font-size: 13px;
+  font-weight: bold;
+  letter-spacing: 0.1em;
 `;
 
 const LinkWrapper = styled.div`
@@ -55,41 +62,23 @@ const Footer = () => {
   return (
     <ContentWrapper>
       <FooterContainer>
-        <FooterFlexWrapperFirst>
-          <p
-            style={{
-              fontSize: "13px",
-              fontWeight: "bold",
-              letterSpacing: "0.1em",
-            }}
-          >
-            GET IN TOUCH
-          </p>
+        <LeftHalfOfFooterContainer>
+          <BoldText>GET IN TOUCH</BoldText>
           <p>
             <EmailLink href="mailto:Johnuxui@gmail.com">
               Johnuxui@gmail.com
             </EmailLink>
           </p>
-          <WithinFooterFirst
-            style={{
-              fontSize: "12px",
-            }}
-          >
+          <TextFontTypeOne>
             <FooterLinkImage
               src="https://static.wixstatic.com/media/71546a_eb2b4226bfda49229e0bbd4b8ef1724c~mv2.png/v1/fill/w_25,h_25,al_c,lg_1,q_85,enc_auto/baseline_copyright_black_18dp.png"
               alt="baseline_copyright_black_18dp.png"
             ></FooterLinkImage>
             <p>2021 John Nguyen</p>
-          </WithinFooterFirst>
-          <WithinFooterFirstSecond
-            style={{
-              fontSize: "12px",
-            }}
-          >
-            Made In San Francisco, CA
-          </WithinFooterFirstSecond>
-        </FooterFlexWrapperFirst>
-        <FooterFlexWrapperSecond>
+          </TextFontTypeOne>
+          <TextFontTypeTwo>Made In San Francisco, CA</TextFontTypeTwo>
+        </LeftHalfOfFooterContainer>
+        <RightHalfOfFooterContainer>
           <strong>LET'S CONNECT</strong>
           <LinkWrapper>
             <a
@@ -133,7 +122,7 @@ const Footer = () => {
               ></FooterLinkImage>
             </a>
           </LinkWrapper>
-        </FooterFlexWrapperSecond>
+        </RightHalfOfFooterContainer>
       </FooterContainer>
     </ContentWrapper>
   );
