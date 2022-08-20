@@ -10,7 +10,6 @@ const FooterContainer = styled.div`
 `;
 
 const EmailLink = styled.a`
-  data-auto-recognition: true;
   text-decoration: none;
   color: black;
   font-size: 16px;
