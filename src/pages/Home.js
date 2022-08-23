@@ -94,6 +94,7 @@ const Home = () => {
         <JoblifySection />
         <MontanaStateSection />
         <FontType>UI DESIGNS</FontType>
+        <PhoneScreenShotSize></PhoneScreenShotSize>
         <GreyLine />
       </div>
     </ContentWrapper>
