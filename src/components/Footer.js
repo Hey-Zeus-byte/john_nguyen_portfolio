@@ -9,7 +9,7 @@ const Container = styled.div`
 
 const FooterContainer = styled.div`
   display: flex;
-  justify-content: space-evenly;
+  justify-content: space-between;
 `;
 
 const EmailLink = styled.a`
