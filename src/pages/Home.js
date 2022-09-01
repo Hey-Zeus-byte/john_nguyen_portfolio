@@ -37,24 +37,6 @@ const FontType = styled.h4`
   text-align: center;
 `;
 
-const LightGreenBlock = styled.div`
-  display: block;
-  background-color: #407c5112;
-  height: 735px;
-  width: 753px;
-  z-index: -1;
-`;
-
-const YumYumScreenshots = styled.img`
-  width: 190px;
-  height: 400px;
-`;
-
-const Arrows = styled.img`
-  width: 60px;
-  height: 30px;
-`;
-
 const SectionHeader = styled.div`
   display: flex;
   flex-direction: row;
@@ -71,12 +53,36 @@ const SectionSubHeader = styled.div`
   color: #c7c7c7;
 `;
 
+const LightGreenBlock = styled.div`
+  display: block;
+  background-color: #407c5112;
+  height: 735px;
+  width: 753px;
+`;
+
+const WhiteBlock = styled.a`
+  display: block;
+  width: 170px;
+  height: 365px;
+  background-color: white;
+`;
+
+// Yum Yum Section vvv
+const YumYumScreenshots = styled.img`
+  width: 190px;
+  height: 400px;
+`;
+
 const YumYumContainer = styled.div`
   display: flex;
   justify-content: space-between;
-  align-items: center;
 `;
 
+const YumYumPhoneContainer = styled(YumYumContainer)``;
+
+// Yum Yum Section ^^^
+
+// Keep Kids Fire Section vvv
 const KeepKidsFireFoundationContainer = styled.div`
   display: flex;
   justify-content: space-between;
@@ -89,16 +95,38 @@ const KKFFScreenshots = styled.img`
   height: 400px;
 `;
 
+// Keep Kids Fire Section ^^^
+// Joblify Section vvv
 const JoblifyContainer = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
 `;
+
+// Joblify Section ^^^
+// Montana State Section vvv
 const MontanaStateContainer = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
 `;
+// Montana State Section ^^^
+
+// UI Design Section vvv
+const UIDesignContainer = styled.div``;
+
+const UIDesignScreenshots = styled.img`
+  width: 175px;
+  height: 360px;
+`;
+
+const Arrows = styled.img`
+  width: 60px;
+  height: 30px;
+  object-fit: cover;
+  object-position: 50% 50%;
+`;
+// UI Design Section ^^^
 
 const MoreDesignsButton = styled.button`
   cursor: pointer;
@@ -109,19 +137,11 @@ const MoreDesignsButton = styled.button`
   background: transparent;
   border-color: #407c51;
   letter-spacing: 0.1em;
-  font-family: wfont_b51edb_bee14627d7bd4325adfb5a241fc7c83d, wf_bee14627d7bd;
 
   &:hover {
     background-color: #407c51;
     color: white;
   }
-`;
-
-const UIDesignContainer = styled.div``;
-
-const UIDesignScreenshots = styled.img`
-  width: 175px;
-  height: 360px;
 `;
 
 const Home = () => {
@@ -149,7 +169,7 @@ const Home = () => {
         <GreyLine />
         <LightGreenBlock />
         <YumYumContainer>
-          <div>
+          <YumYumPhoneContainer>
             <YumYumScreenshots
               src="https://static.wixstatic.com/media/71546a_c5ed89a378a74c8ebe3c6efd6f7f6a38~mv2.png/v1/fill/w_193,h_405,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/Group%201421.png"
               alt=""
@@ -158,16 +178,43 @@ const Home = () => {
               src="https://static.wixstatic.com/media/71546a_371b56690ccb4b5aa4fe3993facc6f2b~mv2.png/v1/fill/w_239,h_502,al_c,lg_1,q_85,enc_auto/Group%2014028.png"
               alt=""
             ></YumYumScreenshots>
-            <YumYumScreenshots
-              src="https://static.wixstatic.com/media/71546a_fae5e95e816f40ddbecf5a8b8d989f7f~mv2.gif"
-              alt=""
-            ></YumYumScreenshots>
-            {/* // the image element above alt="screenshot" must be on top of the image alt="phone" z-index  */}
-            <YumYumScreenshots
-              src="https://static.wixstatic.com/media/71546a_dd662d1a0d57493f8202ff1228f0f797~mv2.png/v1/fill/w_185,h_405,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/Group%2014092.png"
-              alt=""
-            ></YumYumScreenshots>
-          </div>
+            <div
+              style={{
+                position: "relative",
+                top: "0",
+                left: "0",
+                cursor: "pointer",
+              }}
+              onClick={() => navigate("/projects/yumyum")}
+            >
+              <YumYumScreenshots
+                src="https://static.wixstatic.com/media/71546a_dd662d1a0d57493f8202ff1228f0f797~mv2.png/v1/fill/w_185,h_405,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/Group%2014092.png"
+                alt="physical-phone"
+                style={{position: "relative", top: "0", left: "0"}}
+              ></YumYumScreenshots>
+              <WhiteBlock
+                style={{
+                  // border: "5px solid red",
+                  position: "absolute",
+                  top: "26px",
+                  left: "10px",
+                  borderRadius: "5px",
+                }}
+              />
+              <YumYumScreenshots
+                src="https://static.wixstatic.com/media/71546a_fae5e95e816f40ddbecf5a8b8d989f7f~mv2.gif"
+                alt="image-inside-of-phone"
+                style={{
+                  position: "absolute",
+                  width: "162px",
+                  height: "357px",
+                  top: "30px",
+                  left: "15px",
+                  borderRadius: "5px",
+                }}
+              ></YumYumScreenshots>
+            </div>
+          </YumYumPhoneContainer>
           <div>
             <SectionSubHeader>Food recipes app</SectionSubHeader>
             <SectionHeader>Yum Yum</SectionHeader>
@@ -184,6 +231,30 @@ const Home = () => {
             alt=""
             // style="width: 643px; height: 381px; object-fit: cover; object-position: 50% 50%;"
           ></KKFFScreenshots>
+          <div style={{position: "relative", top: "0", left: "0"}}>
+            <img
+              src="https://static.wixstatic.com/media/71546a_6884cc1aac674e26a1048dfc1fae6fe0~mv2.png/v1/fill/w_270,h_544,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/Group%201404.png"
+              alt=""
+              style={{
+                position: "relative",
+                top: "0",
+                left: "0",
+                width: "135px",
+                height: "272px",
+              }}
+            ></img>
+            <img
+              src="https://static.wixstatic.com/media/71546a_9d6d1778d1f74c1aa24eca4eff21396d~mv2.gif"
+              alt=""
+              style={{
+                position: "absolute",
+                top: "45px",
+                left: "12px",
+                width: "110px",
+                height: "195px",
+              }}
+            ></img>
+          </div>
         </KeepKidsFireFoundationContainer>
         <LightGreenBlock />
         <JoblifyContainer>
