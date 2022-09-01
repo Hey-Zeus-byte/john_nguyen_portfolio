@@ -13,9 +13,7 @@ const NavFlexWrapper = styled.div`
   height: 84px;
 `;
 
-const NavLinkWrapper = styled.div`
-  padding-right: 100px;
-`;
+const NavLinkWrapper = styled.div``;
 
 const NavLink = styled(Link)`
   text-decoration: none;
@@ -34,7 +32,7 @@ const NavHomeLink = styled(Link)`
   text-decoration: none;
   color: #407c51;
   font-size: 25px;
-  padding-left: 100px;
+  /* padding-left: 100px; */
 `;
 
 const NavBar = () => {
