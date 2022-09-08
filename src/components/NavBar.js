@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState} from "react";
 import {Link} from "react-router-dom";
 import styled from "styled-components";
 import {ContentWrapper} from "./ContentWrapper";
@@ -16,7 +16,7 @@ const NavFlexWrapper = styled.div`
 const NavLinkWrapper = styled.div`
   @media (max-width: 768px) {
     display: flex;
-    flex-flow: column nowrap;
+    flex-flow: column;
     background-color: rgb(245, 244, 220);
     position: fixed;
     top: 0;
@@ -60,23 +60,38 @@ const NavHomeLink = styled(Link)`
   font-size: 25px;
 `;
 
-const ThreeLineNavBar = styled.div`
+const HamburgerNavBar = styled.div`
   display: block;
   margin: 1em;
 
-  @media (max-width: 1250px) {
+  div {
+    width: 30px;
+    height: 2px;
+    background-color: black;
+    margin: 8px 0;
+    border-radius: 5px;
+    transform-origin: 0;
+    transition: all 0.3s linear;
+    z-index: 20px;
+
+    &:nth-child(1) {
+      transform: ${({open}) => (open ? "rotate(45deg)" : "rotate(0)")};
+    }
+
+    &:nth-child(2) {
+      transform: ${({open}) => (open ? "translateX(100%)" : "translateX(0)")};
+      opacity: ${({open}) => (open ? "0" : "1")};
+    }
+
+    &:nth-child(3) {
+      transform: ${({open}) => (open ? "rotate(-45deg)" : "rotate(0)")};
+    }
+  }
+  /* project uses max-width, but min-width is
+   appropriate because should always dispplay block in mobiel devices only */
+  @media only screen and (min-width: 768px) {
     display: none;
   }
-`;
-
-const BlackBar = styled.div`
-  width: 30px;
-  height: 2px;
-  background-color: black;
-  margin: 8px 0;
-  border-radius: 5px;
-  box-shadow: 0 2px 5px rgba(255, 101, 47, 0.2);
-  transition: all 0.5 ease-in-out;
 `;
 
 const DropDownContent = styled.div`
@@ -95,17 +110,25 @@ const DropDownList = styled.li`
 `;
 
 const NavBar = () => {
+  const [open, setOpen] = useState();
+  // hamburger animation
+  const [rightNavBarOpen, setRightNavBarOpen] = useState();
+
   return (
     <NavBarContainer>
       <ContentWrapper>
         <NavFlexWrapper>
           <NavHomeLink to="/">John Nguyen</NavHomeLink>
-          <NavLinkWrapper>
-            <ThreeLineNavBar>
-              <BlackBar />
-              <BlackBar />
-              <BlackBar />
-            </ThreeLineNavBar>
+          <NavLinkWrapper
+            rightNavBarOpen={!rightNavBarOpen}
+            onClick={() => setRightNavBarOpen(rightNavBarOpen)}
+          >
+            <HamburgerNavBar open={open} onClick={() => setOpen(!open)}>
+              <div />
+              <div />
+              <div />
+            </HamburgerNavBar>
+            {/* Should only appear when user visits using a mobile device */}
             <NavLink to="/about-me">ABOUT ME</NavLink>
             <NavLink to="/designs">DESIGNS</NavLink>
             <DropDownList>
