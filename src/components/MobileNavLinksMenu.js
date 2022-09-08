@@ -1,23 +1,22 @@
-import React from "react";
+import React, {useState} from "react";
 import {Link} from "react-router-dom";
 import styled from "styled-components";
-import {ContentWrapper} from "./ContentWrapper";
-import MobileNavLinksMenu from "./MobileNavLinksMenu";
+import {HamburgerButton} from "./HamburgerButton";
 
-const NavBarContainer = styled.div``;
-
-const NavFlexWrapper = styled.div`
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-  height: 84px;
-`;
-
-const NavLinkWrapper = styled.div`
-  display: none;
+const MobileNavLinkWrapper = styled.div`
   @media only screen and (min-width: 768px) {
-    display: block;
+    display: none;
+  }
+  @media only screen and (max-width: 768px) {
+    display: flex;
+    flex-flow: column;
+    background-color: rgb(245, 244, 220);
+    position: fixed;
+    top: 0;
+    right: 0;
+    height: 100vh;
+    width: 250px;
+    padding-top: 3.5rem;
   }
 `;
 
@@ -32,6 +31,13 @@ const NavLink = styled(Link)`
   &:hover {
     color: #000000;
   }
+
+  @media (max-width: 768px) {
+    font-size: 20px;
+    font-weight: 500;
+    color: #000000;
+    line-height: 38px;
+  }
 `;
 
 const SubNavLink = styled(NavLink)`
@@ -39,12 +45,6 @@ const SubNavLink = styled(NavLink)`
   display: block;
   text-align: left;
   padding: 10px;
-`;
-
-const NavHomeLink = styled(Link)`
-  text-decoration: none;
-  color: #407c51;
-  font-size: 25px;
 `;
 
 const DropDownContent = styled.div`
@@ -62,9 +62,13 @@ const DropDownList = styled.li`
   }
 `;
 
-const DesktopNavLinks = () => {
+const MobileNavLinksMenu = () => {
+  const [open, setOpen] = useState();
+
   return (
-    <NavLinkWrapper>
+    <MobileNavLinkWrapper>
+      <HamburgerButton onToggle={setOpen} />
+      {/* Should only appear when user visits using a mobile device */}
       <NavLink to="/about-me">ABOUT ME</NavLink>
       <NavLink to="/designs">DESIGNS</NavLink>
       <DropDownList>
@@ -79,22 +83,8 @@ const DesktopNavLinks = () => {
         </DropDownContent>
       </DropDownList>
       <NavLink to="/contact">CONTACT</NavLink>
-    </NavLinkWrapper>
+    </MobileNavLinkWrapper>
   );
 };
 
-const NavBar = () => {
-  return (
-    <NavBarContainer>
-      <ContentWrapper>
-        <NavFlexWrapper>
-          <NavHomeLink to="/">John Nguyen</NavHomeLink>
-          <DesktopNavLinks />
-          <MobileNavLinksMenu />
-        </NavFlexWrapper>
-      </ContentWrapper>
-    </NavBarContainer>
-  );
-};
-
-export default NavBar;
+export default MobileNavLinksMenu;
