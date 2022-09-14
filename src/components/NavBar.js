@@ -1,8 +1,8 @@
-import React from "react";
-import {Link} from "react-router-dom";
+import React, { useState } from "react";
+import { Link } from "react-router-dom";
 import styled from "styled-components";
-import {ContentWrapper} from "./ContentWrapper";
-import MobileNavLinksMenu from "./MobileNavLinksMenu";
+import { ContentWrapper } from "./ContentWrapper";
+import { HamburgerButton } from "./HamburgerButton";
 
 const NavBarContainer = styled.div``;
 
@@ -84,13 +84,15 @@ const DesktopNavLinks = () => {
 };
 
 const NavBar = () => {
+  const [open] = useState();
+
   return (
     <NavBarContainer>
       <ContentWrapper>
         <NavFlexWrapper>
           <NavHomeLink to="/">John Nguyen</NavHomeLink>
           <DesktopNavLinks />
-          <MobileNavLinksMenu />
+          <HamburgerButton onToggle={open} />
         </NavFlexWrapper>
       </ContentWrapper>
     </NavBarContainer>

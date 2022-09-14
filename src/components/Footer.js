@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import {ContentWrapper} from "./ContentWrapper";
+import { ContentWrapper } from "./ContentWrapper";
 
 const Container = styled.div`
   background-color: rgba(247, 245, 245);
@@ -17,7 +17,7 @@ const EmailLink = styled.a`
   text-decoration: none;
   color: black;
   font-size: 16px;
-  letter-spacing: 0.2em;
+  letter-spacing: 3px;
 
   &:hover {
     color: red;
@@ -42,7 +42,7 @@ const RightHalfOfFooterContainer = styled.div``;
 const BoldText = styled.p`
   font-size: 13px;
   font-weight: bold;
-  letter-spacing: 0.1em;
+  letter-spacing: 2px;
 `;
 
 const LinkWrapper = styled.div`

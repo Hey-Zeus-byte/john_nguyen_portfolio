@@ -1,22 +1,26 @@
-import React, {useState} from "react";
-import {Link} from "react-router-dom";
+import React, { useState } from "react";
+import { Link } from "react-router-dom";
 import styled from "styled-components";
-import {HamburgerButton} from "./HamburgerButton";
+import { DropDownButton } from "./DropDownButton";
 
 const MobileNavLinkWrapper = styled.div`
+  display: flex;
   @media only screen and (min-width: 768px) {
     display: none;
   }
+
   @media only screen and (max-width: 768px) {
-    display: flex;
     flex-flow: column;
     background-color: rgb(245, 244, 220);
+    transform: ${({ open }) => (open ? "translateX(100%)" : "translateX(0)")};
+    transition: transform 0.3s ease-in-out;
     position: fixed;
     top: 0;
     right: 0;
     height: 100vh;
     width: 250px;
-    padding-top: 3.5rem;
+    padding-top: 56px;
+    z-index: 1;
   }
 `;
 
@@ -32,7 +36,7 @@ const NavLink = styled(Link)`
     color: #000000;
   }
 
-  @media (max-width: 768px) {
+  @media only screen and (max-width: 768px) {
     font-size: 20px;
     font-weight: 500;
     color: #000000;
@@ -40,48 +44,21 @@ const NavLink = styled(Link)`
   }
 `;
 
-const SubNavLink = styled(NavLink)`
-  text-decoration: none;
-  display: block;
-  text-align: left;
-  padding: 10px;
+const DropDownContainer = styled.div`
+  display: flex;
 `;
 
-const DropDownContent = styled.div`
-  display: none;
-  position: absolute;
-  background-color: white;
-  min-width: 160px;
-  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
-`;
-
-const DropDownList = styled.li`
-  display: inline-block;
-  &:hover ${DropDownContent} {
-    display: block;
-  }
-`;
-
-const MobileNavLinksMenu = () => {
-  const [open, setOpen] = useState();
+const MobileNavLinksMenu = ({ open }) => {
+  const [openDropDown] = useState();
 
   return (
-    <MobileNavLinkWrapper>
-      <HamburgerButton onToggle={setOpen} />
-      {/* Should only appear when user visits using a mobile device */}
+    <MobileNavLinkWrapper open={open}>
       <NavLink to="/about-me">ABOUT ME</NavLink>
       <NavLink to="/designs">DESIGNS</NavLink>
-      <DropDownList>
+      <DropDownContainer>
         <NavLink to="/projects">PROJECTS</NavLink>
-        <DropDownContent>
-          <SubNavLink to="/projects/yumyum">Yum Yum</SubNavLink>
-          <SubNavLink to="/projects/nonprofit">
-            Non Profit Organization
-          </SubNavLink>
-          <SubNavLink to="/projects/joblify">Joblify</SubNavLink>
-          <SubNavLink to="/projects/montana">Montana State Park</SubNavLink>
-        </DropDownContent>
-      </DropDownList>
+        <DropDownButton onToggle={openDropDown} />
+      </DropDownContainer>
       <NavLink to="/contact">CONTACT</NavLink>
     </MobileNavLinkWrapper>
   );
