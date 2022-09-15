@@ -3,16 +3,21 @@ import { Link } from "react-router-dom";
 
 const DropDownContent = styled.div`
   display: flex;
-  position: absolute;
-  background-color: white;
-  border: 3px solid red;
+  flex-direction: column;
+  background-color: rgb(245, 244, 220);
+  transform: ${({ openDropDown }) =>
+    openDropDown ? "translateY(0)" : "translateY(100%)"};
+  opacity: ${({ openDropDown }) => (openDropDown ? "0" : "1")};
 `;
 
 const SubNavLink = styled(Link)`
   text-decoration: none;
-  display: block;
   text-align: left;
-  padding: 10px;
+  color: #000000;
+  font-size: 20px;
+  font-weight: 500;
+  padding: 9px 20px;
+  line-height: 38px;
 `;
 
 export const SubMobileMenu = ({ openDropDown }) => {

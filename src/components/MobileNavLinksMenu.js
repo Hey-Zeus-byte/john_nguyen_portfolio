@@ -10,7 +10,7 @@ const MobileNavLinkWrapper = styled.div`
   }
 
   @media only screen and (max-width: 768px) {
-    flex-flow: column;
+    flex-direction: column;
     background-color: rgb(245, 244, 220);
     transform: ${({ open }) => (open ? "translateX(100%)" : "translateX(0)")};
     transition: transform 0.3s ease-in-out;
@@ -44,9 +44,7 @@ const NavLink = styled(Link)`
   }
 `;
 
-const DropDownContainer = styled.div`
-  display: flex;
-`;
+const DropDownContainer = styled.div``;
 
 const MobileNavLinksMenu = ({ open }) => {
   const [openDropDown] = useState();
@@ -55,10 +53,8 @@ const MobileNavLinksMenu = ({ open }) => {
     <MobileNavLinkWrapper open={open}>
       <NavLink to="/about-me">ABOUT ME</NavLink>
       <NavLink to="/designs">DESIGNS</NavLink>
-      <DropDownContainer>
-        <NavLink to="/projects">PROJECTS</NavLink>
-        <DropDownButton onToggle={openDropDown} />
-      </DropDownContainer>
+      <NavLink to="/projects">PROJECTS</NavLink>
+      <DropDownButton onToggle={openDropDown} />
       <NavLink to="/contact">CONTACT</NavLink>
     </MobileNavLinkWrapper>
   );
