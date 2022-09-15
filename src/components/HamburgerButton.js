@@ -54,7 +54,7 @@ export const HamburgerButton = ({ onToggle }) => {
         <div />
         <div />
       </HamburgerButtonWrapper>
-      <MobileNavLinksMenu open={!open} />
+      <MobileNavLinksMenu open={open} />
     </>
   );
 };
