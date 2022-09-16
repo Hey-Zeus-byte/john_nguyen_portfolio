@@ -1,24 +1,20 @@
-import React from "react";
 import styled from "styled-components";
-import { ContentWrapper } from "./ContentWrapper";
-import { MobileFooter } from "./MobileFooter";
 
-const Container = styled.div`
-  background-color: rgba(247, 245, 245);
-  border-color: rgba(199, 199, 199);
-`;
-
-const FooterContainer = styled.div`
-  display: flex;
-  justify-content: space-between;
-  padding: 50px 0 80px 0;
-
-  @media only screen and (max-width: 768px) {
-    display: flex;
-    justify-content: space-between;
-    padding: 0 0 20px 0;
+const MobileFooterContainer = styled.div`
+  height: auto;
+  @media only screen and (min-width: 768px) {
+    display: none;
   }
 `;
+
+const TextFontTypeOne = styled(MobileFooterContainer)`
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  font-size: 12px;
+`;
+
+const TextFontTypeTwo = styled(TextFontTypeOne)``;
 
 const EmailLink = styled.a`
   text-decoration: none;
@@ -29,63 +25,42 @@ const EmailLink = styled.a`
   &:hover {
     color: red;
   }
-`;
-
-const LeftHalfOfFooterContainer = styled.div`
-  height: auto;
-  @media only screen and (max-width: 768px) {
-    display: none;
-  }
-`;
-
-const TextFontTypeOne = styled(LeftHalfOfFooterContainer)`
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  font-size: 12px;
-`;
-
-const TextFontTypeTwo = styled(TextFontTypeOne)``;
-
-const RightHalfOfFooterContainer = styled.div`
-  @media only screen and (max-width: 768px) {
-    display: none;
-  }
-`;
-
-const BoldText = styled.p`
-  font-size: 13px;
-  font-weight: bold;
-  letter-spacing: 2px;
 
   @media only screen and (max-width: 768px) {
-    .remove {
-      display: none;
-    }
+    font-size: 13px;
   }
 `;
 
 const LinkWrapper = styled.div`
   display: flex;
-  gap: 12px;
+  gap: 15px;
 
   @media only screen and (max-width: 768px) {
-    position: relative;
+    margin-top: 30px;
   }
 `;
 
 const CopyRightImage = styled.img`
   width: 21px;
   height: 20px;
+  @media only screen and (max-width: 768px) {
+    width: 14px;
+    height: 16px;
+  }
 `;
 
-const FooterLinkImage = styled(CopyRightImage)``;
+const FooterLinkImage = styled(CopyRightImage)`
+  @media only screen and (max-width: 768px) {
+    width: 30px;
+    height: 30px;
+  }
+`;
 
-const FooterContent = () => {
+export const MobileFooter = () => {
   return (
     <>
-      <LeftHalfOfFooterContainer>
-        <BoldText>GET IN TOUCH</BoldText>
+      <MobileFooterContainer>
+        <h5>GET IN TOUCH</h5>
         <p>
           <EmailLink href="mailto:Johnuxui@gmail.com">
             Johnuxui@gmail.com
@@ -96,12 +71,9 @@ const FooterContent = () => {
             src="https://static.wixstatic.com/media/71546a_eb2b4226bfda49229e0bbd4b8ef1724c~mv2.png/v1/fill/w_25,h_25,al_c,lg_1,q_85,enc_auto/baseline_copyright_black_18dp.png"
             alt="baseline_copyright_black_18dp.png"
           ></CopyRightImage>
-          <p>2021 John Nguyen</p>
+          2021 John Nguyen
         </TextFontTypeOne>
         <TextFontTypeTwo>Made In San Francisco, CA</TextFontTypeTwo>
-      </LeftHalfOfFooterContainer>
-      <RightHalfOfFooterContainer>
-        <BoldText className="remove">LET'S CONNECT</BoldText>
         <LinkWrapper>
           <a
             href="https://www.linkedin.com/in/johnguyen/"
@@ -144,22 +116,7 @@ const FooterContent = () => {
             ></FooterLinkImage>
           </a>
         </LinkWrapper>
-      </RightHalfOfFooterContainer>
+      </MobileFooterContainer>
     </>
   );
 };
-
-const Footer = () => {
-  return (
-    <Container>
-      <ContentWrapper>
-        <FooterContainer>
-          <FooterContent />
-          <MobileFooter />
-        </FooterContainer>
-      </ContentWrapper>
-    </Container>
-  );
-};
-
-export default Footer;
