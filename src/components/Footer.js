@@ -1,22 +1,23 @@
 import React from "react";
 import styled from "styled-components";
-import {ContentWrapper} from "./ContentWrapper";
+import { ContentWrapper } from "./ContentWrapper";
 
 const Container = styled.div`
-  background-color: rgba(247, 245, 255);
+  background-color: rgba(247, 245, 245);
   border-color: rgba(199, 199, 199);
 `;
 
 const FooterContainer = styled.div`
   display: flex;
   justify-content: space-between;
+  padding: 50px 0 80px 0;
 `;
 
 const EmailLink = styled.a`
   text-decoration: none;
   color: black;
   font-size: 16px;
-  letter-spacing: 0.2em;
+  letter-spacing: 3px;
 
   &:hover {
     color: red;
@@ -36,18 +37,12 @@ const TextFontTypeOne = styled(LeftHalfOfFooterContainer)`
 
 const TextFontTypeTwo = styled(TextFontTypeOne)``;
 
-const RightHalfOfFooterContainer = styled.div`
-  height: auto;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 50px;
-`;
+const RightHalfOfFooterContainer = styled.div``;
 
 const BoldText = styled.p`
   font-size: 13px;
   font-weight: bold;
-  letter-spacing: 0.1em;
+  letter-spacing: 2px;
 `;
 
 const LinkWrapper = styled.div`
@@ -82,7 +77,7 @@ const Footer = () => {
             <TextFontTypeTwo>Made In San Francisco, CA</TextFontTypeTwo>
           </LeftHalfOfFooterContainer>
           <RightHalfOfFooterContainer>
-            <strong>LET'S CONNECT</strong>
+            <BoldText>LET'S CONNECT</BoldText>
             <LinkWrapper>
               <a
                 href="https://www.linkedin.com/in/johnguyen/"
