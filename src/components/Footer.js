@@ -1,7 +1,6 @@
 import React from "react";
 import styled from "styled-components";
 import { ContentWrapper } from "./ContentWrapper";
-import { MobileFooter } from "./MobileFooter";
 
 const Container = styled.div`
   background-color: rgba(247, 245, 245);
@@ -14,9 +13,9 @@ const FooterContainer = styled.div`
   padding: 50px 0 80px 0;
 
   @media only screen and (max-width: 768px) {
-    display: flex;
     justify-content: space-between;
     padding: 0 0 20px 0;
+    flex-direction: column;
   }
 `;
 
@@ -29,13 +28,13 @@ const EmailLink = styled.a`
   &:hover {
     color: red;
   }
+  s @media only screen and (max-width: 768px) {
+    font-size: 13px;
+  }
 `;
 
 const LeftHalfOfFooterContainer = styled.div`
   height: auto;
-  @media only screen and (max-width: 768px) {
-    display: none;
-  }
 `;
 
 const TextFontTypeOne = styled(LeftHalfOfFooterContainer)`
@@ -47,39 +46,44 @@ const TextFontTypeOne = styled(LeftHalfOfFooterContainer)`
 
 const TextFontTypeTwo = styled(TextFontTypeOne)``;
 
-const RightHalfOfFooterContainer = styled.div`
-  @media only screen and (max-width: 768px) {
-    display: none;
-  }
-`;
+const RightHalfOfFooterContainer = styled.div``;
 
 const BoldText = styled.p`
   font-size: 13px;
   font-weight: bold;
   letter-spacing: 2px;
+`;
 
+const BoldText2 = styled(BoldText)`
   @media only screen and (max-width: 768px) {
-    .remove {
-      display: none;
-    }
+    display: none;
   }
 `;
 
 const LinkWrapper = styled.div`
   display: flex;
-  gap: 12px;
+  gap: 15px;
 
   @media only screen and (max-width: 768px) {
-    position: relative;
+    margin-top: 30px;
   }
 `;
 
 const CopyRightImage = styled.img`
   width: 21px;
   height: 20px;
+  @media only screen and (max-width: 768px) {
+    width: 14px;
+    height: 16px;
+  }
 `;
 
-const FooterLinkImage = styled(CopyRightImage)``;
+const FooterLinkImage = styled(CopyRightImage)`
+  @media only screen and (max-width: 768px) {
+    width: 30px;
+    height: 30px;
+  }
+`;
 
 const FooterContent = () => {
   return (
@@ -101,7 +105,7 @@ const FooterContent = () => {
         <TextFontTypeTwo>Made In San Francisco, CA</TextFontTypeTwo>
       </LeftHalfOfFooterContainer>
       <RightHalfOfFooterContainer>
-        <BoldText className="remove">LET'S CONNECT</BoldText>
+        <BoldText2>LET'S CONNECT</BoldText2>
         <LinkWrapper>
           <a
             href="https://www.linkedin.com/in/johnguyen/"
@@ -155,7 +159,6 @@ const Footer = () => {
       <ContentWrapper>
         <FooterContainer>
           <FooterContent />
-          <MobileFooter />
         </FooterContainer>
       </ContentWrapper>
     </Container>
