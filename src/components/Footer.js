@@ -13,7 +13,6 @@ const FooterContainer = styled.div`
   padding: 50px 0 80px 0;
 
   @media only screen and (max-width: 768px) {
-    justify-content: space-between;
     padding: 0 0 20px 0;
     flex-direction: column;
   }
@@ -28,7 +27,7 @@ const EmailLink = styled.a`
   &:hover {
     color: red;
   }
-  s @media only screen and (max-width: 768px) {
+  @media only screen and (max-width: 768px) {
     font-size: 13px;
   }
 `;
@@ -48,13 +47,13 @@ const TextFontTypeTwo = styled(TextFontTypeOne)``;
 
 const RightHalfOfFooterContainer = styled.div``;
 
-const BoldText = styled.p`
+const LeftFootHeader = styled.p`
   font-size: 13px;
   font-weight: bold;
   letter-spacing: 2px;
 `;
 
-const BoldText2 = styled(BoldText)`
+const RightFootHeader = styled(LeftFootHeader)`
   @media only screen and (max-width: 768px) {
     display: none;
   }
@@ -89,7 +88,7 @@ const FooterContent = () => {
   return (
     <>
       <LeftHalfOfFooterContainer>
-        <BoldText>GET IN TOUCH</BoldText>
+        <LeftFootHeader>GET IN TOUCH</LeftFootHeader>
         <p>
           <EmailLink href="mailto:Johnuxui@gmail.com">
             Johnuxui@gmail.com
@@ -105,7 +104,7 @@ const FooterContent = () => {
         <TextFontTypeTwo>Made In San Francisco, CA</TextFontTypeTwo>
       </LeftHalfOfFooterContainer>
       <RightHalfOfFooterContainer>
-        <BoldText2>LET'S CONNECT</BoldText2>
+        <RightFootHeader>LET'S CONNECT</RightFootHeader>
         <LinkWrapper>
           <a
             href="https://www.linkedin.com/in/johnguyen/"
