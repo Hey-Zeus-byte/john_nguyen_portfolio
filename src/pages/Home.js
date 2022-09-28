@@ -56,37 +56,13 @@ const FontType = styled.h4`
   z-index: 2;
 `;
 
-const SectionHeader = styled.div`
-  display: flex;
-  flex-direction: row;
-  color: #000000;
-  font-size: 36px;
-  font-family: poppins-semibold, poppins, sans-serif;
-  line-height: 1.2em;
-`;
-
-const SectionSubHeader = styled.div`
-  flex-direction: row;
-  letter-spacing: 0.25em;
-  font-size: 14px;
-  color: #c7c7c7;
-`;
-
-// Keep Kids Fire Section vvv
-const KeepKidsFireFoundationContainer = styled.div`
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-`;
-
-const KKFFScreenshots = styled.img`
-  //Screenshots for the Keep Kids Fire Foundation
-  width: 600px;
-  height: 400px;
-`;
-
 // UI Design Section vvv
-const UIDesignContainer = styled.div``;
+const UIDesignContainer = styled.div`
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-bottom: 50px;
+`;
 
 const UIDesignScreenshots = styled.img`
   width: 175px;
@@ -96,11 +72,14 @@ const UIDesignScreenshots = styled.img`
 const Arrows = styled.img`
   width: 60px;
   height: 30px;
-  object-fit: cover;
-  object-position: 50% 50%;
+  margin-top: 150px;
 `;
 // UI Design Section ^^^
-
+const ButtonContainer = styled.div`
+  text-align: right;
+  margin-right: 225px;
+  margin-bottom: 150px;
+`;
 const MoreDesignsButton = styled.button`
   cursor: pointer;
   color: #407c51;
@@ -109,7 +88,8 @@ const MoreDesignsButton = styled.button`
   font-style: normal;
   background: transparent;
   border-color: #407c51;
-  letter-spacing: 0.1em;
+  letter-spacing: 2px;
+  padding: 15px 25px 15px 25px;
 
   &:hover {
     background-color: #407c51;
@@ -192,44 +172,12 @@ const Home = () => {
       <div>
         <UpperHalfHomePage />
         <ProjectDescComp />
-        <KeepKidsFireFoundationContainer>
-          <div>
-            <SectionSubHeader>Non-Profit Organization</SectionSubHeader>
-            <SectionHeader>Keep Kids Fire Foundation</SectionHeader>
-          </div>
-          <KKFFScreenshots
-            src="https://static.wixstatic.com/media/71546a_90db50e41882458eba18847c113e5b08~mv2.png/v1/fill/w_1286,h_762,al_c,q_90,usm_0.66_1.00_0.01,enc_auto/Group%201386.png"
-            alt=""
-          ></KKFFScreenshots>
-          <div style={{ position: "relative", top: "0", left: "0" }}>
-            <img
-              src="https://static.wixstatic.com/media/71546a_6884cc1aac674e26a1048dfc1fae6fe0~mv2.png/v1/fill/w_270,h_544,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/Group%201404.png"
-              alt=""
-              style={{
-                position: "relative",
-                top: "0",
-                left: "0",
-                width: "135px",
-                height: "272px",
-              }}
-            ></img>
-            <img
-              src="https://static.wixstatic.com/media/71546a_9d6d1778d1f74c1aa24eca4eff21396d~mv2.gif"
-              alt=""
-              style={{
-                position: "absolute",
-                top: "45px",
-                left: "12px",
-                width: "110px",
-                height: "195px",
-              }}
-            ></img>
-          </div>
-        </KeepKidsFireFoundationContainer>
         <UIDesigns />
-        <MoreDesignsButton onClick={() => navigate("/designs")}>
-          more designs
-        </MoreDesignsButton>
+        <ButtonContainer>
+          <MoreDesignsButton onClick={() => navigate("/designs")}>
+            more designs
+          </MoreDesignsButton>
+        </ButtonContainer>
       </div>
     </ContentWrapper>
   );
