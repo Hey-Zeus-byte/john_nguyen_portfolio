@@ -47,6 +47,7 @@ const ImgOfJohn = styled.img`
   transition-duration: 600ms;
   margin-top: 100px;
   margin-left: 50px;
+  cursor: pointer;
 `;
 
 const FontType = styled.h4`
@@ -67,6 +68,7 @@ const UIDesignContainer = styled.div`
 const UIDesignScreenshots = styled.img`
   width: 175px;
   height: 360px;
+  filter: drop-shadow(0 1px 5px #000000);
 `;
 
 const Arrows = styled.img`
@@ -98,16 +100,18 @@ const MoreDesignsButton = styled.button`
 `;
 
 const UpperHalfHomePage = () => {
+  const navigate = useNavigate();
+
   return (
     <TopSectionBackground>
       <TopSection>
         <TempCont>
-          <a href="/about-me">
-            <ImgOfJohn
-              src="https://static.wixstatic.com/media/71546a_3f715f9bdae94883b91336d257fba2c5~mv2.gif"
-              alt=""
-            />
-          </a>
+          <ImgOfJohn
+            src="https://static.wixstatic.com/media/71546a_3f715f9bdae94883b91336d257fba2c5~mv2.gif"
+            alt=""
+            onClick={() => navigate("/about-me")}
+          />
+
           <JohnsIntro>
             <span>Hi there!</span>
             <span>My name is John</span>
@@ -133,31 +137,32 @@ const UIDesigns = () => {
       <UIDesignContainer>
         <UIDesignScreenshots
           src="https://static.wixstatic.com/media/71546a_411ab5220f12428bbe241963dfb4181c~mv2.png/v1/fill/w_361,h_707,al_c,lg_1,q_85,enc_auto/Group%201350.png"
-          alt=""
+          alt="first-screenshot"
         ></UIDesignScreenshots>
         <Arrows
           src="https://static.wixstatic.com/media/71546a_f868bcc9b6e64d9d80844ab70f117b09~mv2.png/v1/fill/w_120,h_58,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/Group%201359.png"
-          alt=""
+          alt="1st arrow"
         ></Arrows>
         <UIDesignScreenshots
           src="https://static.wixstatic.com/media/71546a_c1ac8a9f449d4675bf4eedb348d890d4~mv2.png/v1/fill/w_320,h_710,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/Group%2013632.png"
-          alt=""
+          alt="second-screenshot"
+          style={{}}
         ></UIDesignScreenshots>
         <Arrows
           src="https://static.wixstatic.com/media/71546a_4c7b645e92a44f8d82302fd8694063f5~mv2.png/v1/fill/w_120,h_58,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/Group%25201359_edited.png"
-          alt=""
+          alt="2nd arrow"
         ></Arrows>
         <UIDesignScreenshots
           src="https://static.wixstatic.com/media/71546a_2148d376209244559b3979bf8a3f24b8~mv2.png/v1/fill/w_318,h_708,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/Group%201394.png"
-          alt=""
+          alt="third-screenshot"
         ></UIDesignScreenshots>
         <Arrows
           src="https://static.wixstatic.com/media/71546a_f868bcc9b6e64d9d80844ab70f117b09~mv2.png/v1/fill/w_120,h_58,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/Group%201359.png"
-          alt=""
+          alt="3rd arrow"
         ></Arrows>
         <UIDesignScreenshots
           src="https://static.wixstatic.com/media/71546a_f76905a13bee477da0384e4f4113319f~mv2.png/v1/fill/w_332,h_680,al_c,lg_1,q_85,enc_auto/Group%201354.png"
-          alt=""
+          alt="fourth-screenshot"
         ></UIDesignScreenshots>
       </UIDesignContainer>
     </>

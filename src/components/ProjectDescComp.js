@@ -22,10 +22,20 @@ const Screenshots = styled.img`
 
 const LeftPhoneContainer = styled(LeftContainer)`
   margin-left: 250px;
+  transform: translateX(0);
+  opacity: 1;
+  transition: 2s all ease;
+  cursor: pointer;
+
+  &:active {
+    transform: translateX(150px);
+    opacity: 0;
+  }
 `;
 
 const RightPhoneContainer = styled(LeftContainer)`
   margin-right: 350px;
+  cursor: pointer;
 `;
 
 const WhiteBlock = styled.a`
@@ -90,7 +100,7 @@ const YumYum = () => {
 
   return (
     <LeftLightGreenBlock>
-      <LeftContainer>
+      <LeftContainer onClick={() => navigate("/projects/yumyum")}>
         <LeftPhoneContainer>
           <Screenshots
             src="https://static.wixstatic.com/media/71546a_c5ed89a378a74c8ebe3c6efd6f7f6a38~mv2.png/v1/fill/w_193,h_405,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/Group%201421.png"
@@ -105,9 +115,7 @@ const YumYum = () => {
               position: "relative",
               top: "0",
               left: "0",
-              cursor: "pointer",
             }}
-            onClick={() => navigate("/projects/yumyum")}
           >
             <Screenshots
               src="https://static.wixstatic.com/media/71546a_dd662d1a0d57493f8202ff1228f0f797~mv2.png/v1/fill/w_185,h_405,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/Group%2014092.png"
@@ -150,7 +158,7 @@ const KKFC = () => {
 
   return (
     <RightLightGreenBlock>
-      <RightContainer>
+      <RightContainer onClick={() => navigate("/projects/nonprofit")}>
         <RightPhoneContainer>
           <RightHeaderContainer>
             <SectionSubHeader>Non-Profit Organization</SectionSubHeader>
@@ -195,24 +203,19 @@ const Joblify = () => {
 
   return (
     <LeftLightGreenBlock>
-      <LeftContainer>
+      <LeftContainer onClick={() => navigate("/projects/joblify")}>
         <LeftPhoneContainer>
           <Screenshots
-            src="https://static.wixstatic.com/media/71546a_c5ed89a378a74c8ebe3c6efd6f7f6a38~mv2.png/v1/fill/w_193,h_405,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/Group%201421.png"
+            src="https://static.wixstatic.com/media/71546a_90187460ab8f4b2aa0c3bae14ed4ff8e~mv2.png/v1/crop/x_425,y_0,w_836,h_783/fill/w_436,h_405,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/Group%201407.png"
             alt=""
-          ></Screenshots>
-          <Screenshots
-            src="https://static.wixstatic.com/media/71546a_371b56690ccb4b5aa4fe3993facc6f2b~mv2.png/v1/fill/w_239,h_502,al_c,lg_1,q_85,enc_auto/Group%2014028.png"
-            alt=""
+            style={{ width: "425px", height: "405px" }}
           ></Screenshots>
           <div
             style={{
               position: "relative",
               top: "0",
               left: "0",
-              cursor: "pointer",
             }}
-            onClick={() => navigate("/projects/yumyum")}
           >
             <Screenshots
               src="https://static.wixstatic.com/media/71546a_dd662d1a0d57493f8202ff1228f0f797~mv2.png/v1/fill/w_185,h_405,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/Group%2014092.png"
@@ -228,7 +231,7 @@ const Joblify = () => {
               }}
             />
             <Screenshots
-              src="https://static.wixstatic.com/media/71546a_fae5e95e816f40ddbecf5a8b8d989f7f~mv2.gif"
+              src="https://static.wixstatic.com/media/71546a_c0d96257e18742ca93b5101bd2ff0909~mv2.gif"
               alt="image-inside-of-phone"
               style={{
                 position: "absolute",
@@ -255,7 +258,7 @@ const MontanaStateParks = () => {
 
   return (
     <RightLightGreenBlock>
-      <RightContainer>
+      <RightContainer onClick={() => navigate("/projects/montana")}>
         <RightPhoneContainer>
           <RightHeaderContainer>
             <SectionSubHeader>Government Redesign</SectionSubHeader>
