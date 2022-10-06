@@ -1,11 +1,21 @@
 import styled from "styled-components";
 import { useNavigate } from "react-router-dom";
+import YumYumImg1 from "../assets/homepage/YumYum1.webp";
+import YumYumImg2 from "../assets/homepage/YumYum2.webp";
+import YumYumImg3 from "../assets/homepage/YumYum3.gif";
+import ImgOfPhysicalPhone from "../assets/homepage/ImgOfPhone.webp";
 
-const LeftContainer = styled.div`
+const LeftContainer = styled.a`
   display: flex;
   justify-content: space-between;
   margin-top: 155px;
   margin-left: 120px;
+
+  @media only screen and (max-width: 768px) {
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+  }
 `;
 
 const RightContainer = styled.div`
@@ -18,18 +28,28 @@ const Screenshots = styled.img`
   width: 190px;
   height: 400px;
   margin-right: 35px;
+
+  @media only screen and (max-width: 768px) {
+    width: 95px;
+    height: 200px;
+  }
 `;
 
 const LeftPhoneContainer = styled(LeftContainer)`
   margin-left: 250px;
-  transform: translateX(0);
-  opacity: 1;
-  transition: 2s all ease;
   cursor: pointer;
 
-  &:active {
-    transform: translateX(150px);
-    opacity: 0;
+  .image_inside_phone {
+    position: absolute;
+    width: 162px;
+    height: 357px;
+    top: 30px;
+    left: 15px;
+    border-radius: 5px;
+  }
+
+  .whiteBlockAndImageContainer {
+    position: relative;
   }
 `;
 
@@ -43,6 +63,10 @@ const WhiteBlock = styled.a`
   width: 170px;
   height: 365px;
   background-color: white;
+  position: absolute;
+  top: 26px;
+  left: 10px;
+  border-radius: 5px;
 `;
 
 const LeftHeaderContainer = styled.div`
@@ -79,6 +103,11 @@ const LeftLightGreenBlock = styled.div`
   height: 735px;
   width: 753px;
   margin-top: 150px;
+
+  @media only screen and (max-width: 768px) {
+    height: 735px;
+    width: 410px;
+  }
 `;
 
 const RightLightGreenBlock = styled.div`
@@ -87,10 +116,15 @@ const RightLightGreenBlock = styled.div`
   width: 753px;
   margin-top: 150px;
   margin-left: auto;
+
+  @media only screen and (max-width: 768px) {
+    height: 735px;
+    width: 410px;
+  }
 `;
 
-const KKFFScreenshots = styled.img`
-  //Screenshots for the Keep Kids Fire Foundation
+const KKFFAndMspScreenshots = styled.img`
+  //Screenshots for the Keep Kids Fire Foundation & Montana State Parks
   width: 600px;
   height: 400px;
 `;
@@ -102,45 +136,18 @@ const YumYum = () => {
     <LeftLightGreenBlock>
       <LeftContainer onClick={() => navigate("/projects/yumyum")}>
         <LeftPhoneContainer>
-          <Screenshots
-            src="https://static.wixstatic.com/media/71546a_c5ed89a378a74c8ebe3c6efd6f7f6a38~mv2.png/v1/fill/w_193,h_405,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/Group%201421.png"
-            alt=""
-          ></Screenshots>
-          <Screenshots
-            src="https://static.wixstatic.com/media/71546a_371b56690ccb4b5aa4fe3993facc6f2b~mv2.png/v1/fill/w_239,h_502,al_c,lg_1,q_85,enc_auto/Group%2014028.png"
-            alt=""
-          ></Screenshots>
-          <div
-            style={{
-              position: "relative",
-              top: "0",
-              left: "0",
-            }}
-          >
+          <Screenshots src={YumYumImg1} alt="YumYumScrShot1"></Screenshots>
+          <Screenshots src={YumYumImg2} alt="YumYumScrShot2"></Screenshots>
+          <div className="whiteBlockAndImageContainer">
             <Screenshots
-              src="https://static.wixstatic.com/media/71546a_dd662d1a0d57493f8202ff1228f0f797~mv2.png/v1/fill/w_185,h_405,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/Group%2014092.png"
+              src={ImgOfPhysicalPhone}
               alt="physical-phone"
-              style={{ position: "relative", top: "0", left: "0" }}
             ></Screenshots>
-            <WhiteBlock
-              style={{
-                position: "absolute",
-                top: "26px",
-                left: "10px",
-                borderRadius: "5px",
-              }}
-            />
+            <WhiteBlock />
             <Screenshots
-              src="https://static.wixstatic.com/media/71546a_fae5e95e816f40ddbecf5a8b8d989f7f~mv2.gif"
+              src={YumYumImg3}
               alt="image-inside-of-phone"
-              style={{
-                position: "absolute",
-                width: "162px",
-                height: "357px",
-                top: "30px",
-                left: "15px",
-                borderRadius: "5px",
-              }}
+              className="image_inside_phone"
             ></Screenshots>
           </div>
           <LeftHeaderContainer>
@@ -188,10 +195,10 @@ const KKFC = () => {
               }}
             ></img>
           </div>
-          <KKFFScreenshots
+          <KKFFAndMspScreenshots
             src="https://static.wixstatic.com/media/71546a_90db50e41882458eba18847c113e5b08~mv2.png/v1/fill/w_1286,h_762,al_c,q_90,usm_0.66_1.00_0.01,enc_auto/Group%201386.png"
             alt=""
-          ></KKFFScreenshots>
+          ></KKFFAndMspScreenshots>
         </RightPhoneContainer>
       </RightContainer>
     </RightLightGreenBlock>
@@ -288,10 +295,10 @@ const MontanaStateParks = () => {
               }}
             ></img>
           </div>
-          <KKFFScreenshots
+          <KKFFAndMspScreenshots
             src="https://static.wixstatic.com/media/71546a_a16255d2d28949b4ab5b80b057473d08~mv2.png/v1/fill/w_478,h_375,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/Group%201387.png"
             alt=""
-          ></KKFFScreenshots>
+          ></KKFFAndMspScreenshots>
         </RightPhoneContainer>
       </RightContainer>
     </RightLightGreenBlock>
