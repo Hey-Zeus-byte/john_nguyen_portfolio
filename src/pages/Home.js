@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import { ContentWrapper } from "../components/ContentWrapper";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { ProjectDescComp } from "../components/ProjectDescComp";
 
 const TopSection = styled.div`
@@ -155,20 +155,22 @@ const MoreDesignsButton = styled.button`
   }
 `;
 
-const UpperHalfHomePage = () => {
-  const navigate = useNavigate();
+const AccessibilityLink = styled(Link)`
+  text-decoration: none;
+`;
 
+const UpperHalfHomePage = () => {
   return (
     <TopSectionBackground>
       <ContentWrapper>
         <TopSection>
           <TempCont>
-            <ImgOfJohn
-              src="https://static.wixstatic.com/media/71546a_3f715f9bdae94883b91336d257fba2c5~mv2.gif"
-              alt=""
-              onClick={() => navigate("/about-me")} // use <a> anchor tags for accessbility
-            />
-
+            <AccessibilityLink to="/about-me">
+              <ImgOfJohn
+                src="https://static.wixstatic.com/media/71546a_3f715f9bdae94883b91336d257fba2c5~mv2.gif"
+                alt=""
+              />
+            </AccessibilityLink>
             <JohnsIntro>
               <span>Hi there!</span>
               <span>My name is John</span>
