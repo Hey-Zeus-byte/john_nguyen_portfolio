@@ -44,8 +44,7 @@ const GreyLine = styled.div`
   margin: 0 50%;
 
   @media only screen and (max-width: 768px) {
-    height: 100px;
-    margin-top: 8px;
+    height: 80px;
   }
 `;
 
@@ -86,7 +85,6 @@ const FontType = styled.h4`
   color: #919191;
   font-size: 15px;
   text-align: center;
-  z-index: 2;
 
   @media only screen and (max-width: 768px) {
     font-size: 18px;
