@@ -88,6 +88,7 @@ const FontType = styled.h4`
 
   @media only screen and (max-width: 768px) {
     font-size: 18px;
+    margin-top: 80px;
   }
 `;
 
@@ -96,6 +97,7 @@ const UIDesignContainer = styled.div`
   display: flex;
   justify-content: center;
   gap: 20px;
+  margin-top: 25px;
   margin-bottom: 50px;
 
   @media only screen and (max-width: 768px) {
@@ -124,7 +126,7 @@ const Arrows = styled.img`
 const ButtonContainer = styled.div`
   text-align: right;
   margin-right: 225px;
-  margin-bottom: 150px;
+  margin-bottom: 100px;
 `;
 const MoreDesignsButton = styled.button`
   cursor: pointer;

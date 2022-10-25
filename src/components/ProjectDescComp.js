@@ -57,7 +57,10 @@ const RightContainer = styled.div`
 
   @media only screen and (max-width: 768px) {
     justify-content: center;
-    flex-direction: none;
+
+    .KKFFTopMargin {
+      margin-top: -40px;
+    }
   }
 `;
 
@@ -111,6 +114,28 @@ const RightPhoneContainer = styled(LeftContainer)`
     margin: 0;
     flex-direction: column-reverse;
     flex-wrap: wrap-reverse;
+    margin-top: 50px;
+
+    .montanaStatePhyPhone {
+      position: relative;
+      width: 65px;
+      height: 130px;
+      top: -180px;
+      left: 300px;
+    }
+
+    .montanaStateMonitorImg {
+      position: relative;
+      width: 60px;
+      height: 120px;
+      top: -182px;
+      left: 238px;
+    }
+
+    .montanaMonitorImg {
+      width: 350px;
+      height: 280px;
+    }
   }
 
   .whiteBlockAndImageContainer {
@@ -167,7 +192,17 @@ const RightHeaderContainer = styled.div`
   width: 300px;
 
   @media only screen and (max-width: 768px) {
-    margin: 0;
+    width: 100%;
+    align-items: center;
+    margin-top: -100px;
+
+    .mobileHeader {
+      font-size: 30px;
+    }
+
+    .mobileSubHeader {
+      margin-bottom: 10px;
+    }
   }
 `;
 
@@ -197,6 +232,7 @@ const LeftLightGreenBlock = styled.div`
   @media only screen and (max-width: 768px) {
     height: 295px;
     width: 100%;
+    margin-top: 200px;
   }
 `;
 
@@ -210,6 +246,7 @@ const RightLightGreenBlock = styled.div`
   @media only screen and (max-width: 768px) {
     height: 295px;
     width: 100%;
+    margin-top: 200px;
   }
 `;
 
@@ -232,10 +269,11 @@ const PhysicalPhone = styled.img`
   height: 272px;
 
   @media only screen and (max-width: 768px) {
+    position: relative;
     width: 60px;
-    height: 90px;
-    top: 0;
-    left: 0;
+    height: 110px;
+    top: -110px;
+    left: 30px;
   }
 `;
 
@@ -247,10 +285,12 @@ const PhysicalLaptopOrMonitor = styled.img`
   height: 195px;
 
   @media only screen and (max-width: 768px) {
+    position: relative;
     width: 55px;
-    height: 80px;
-    top: 0;
-    left: 0;
+    height: 100px;
+    top: -112px;
+    left: -28px;
+    border-radius: 5px;
   }
 `;
 
@@ -297,9 +337,13 @@ const KKFC = () => {
       <AccessibilityLink to="/projects/nonprofit">
         <RightContainer>
           <RightPhoneContainer>
-            <RightHeaderContainer>
-              <SectionSubHeader>Non-Profit Organization</SectionSubHeader>
-              <SectionHeader>Keep Kids Fire Foundation</SectionHeader>
+            <RightHeaderContainer className="KKFFTopMargin">
+              <SectionSubHeader className="mobileSubHeader">
+                Non-Profit Organization
+              </SectionSubHeader>
+              <SectionHeader className="mobileHeader">
+                Keep Kids Fire Foundation
+              </SectionHeader>
             </RightHeaderContainer>
             <>
               <div className="whiteBlockAndImageContainer">
@@ -357,27 +401,34 @@ const Joblify = () => {
 
 const MontanaStateParks = () => {
   return (
-    <RightLightGreenBlock>
+    <RightLightGreenBlock style={{ marginBottom: "250px" }}>
       <AccessibilityLink to="/projects/montana">
         <RightContainer>
           <RightPhoneContainer>
             <RightHeaderContainer>
-              <SectionSubHeader>Government Redesign</SectionSubHeader>
-              <SectionHeader>Montana State Parks</SectionHeader>
+              <SectionSubHeader className="mobileSubHeader">
+                Government Redesign
+              </SectionSubHeader>
+              <SectionHeader className="mobileHeader">
+                Montana State Parks
+              </SectionHeader>
             </RightHeaderContainer>
             <div className="whiteBlockAndImageContainer">
               <PhysicalPhone
                 src={ImgOfPhysicalPhone}
                 alt="physical-phone"
+                className="montanaStatePhyPhone"
               ></PhysicalPhone>
               <PhysicalLaptopOrMonitor
                 src={Montana1}
                 alt="imageInsidePhone"
+                className="montanaStateMonitorImg"
               ></PhysicalLaptopOrMonitor>
             </div>
             <KKFFAndMspScreenshots
               src={Montana2}
               alt="monitor"
+              className="montanaMonitorImg"
             ></KKFFAndMspScreenshots>
           </RightPhoneContainer>
         </RightContainer>
