@@ -101,7 +101,7 @@ const LeftPhoneContainer = styled(LeftContainer)`
     flex-wrap: wrap;
   }
 
-  .whiteBlockAndImageContainer {
+  .WhiteBackgroundImgAndImageContainer {
     position: relative;
   }
 `;
@@ -138,7 +138,7 @@ const RightPhoneContainer = styled(LeftContainer)`
     }
   }
 
-  .whiteBlockAndImageContainer {
+  .WhiteBackgroundImgAndImageContainer {
     position: relative;
     top: 130px;
     left: 135px;
@@ -151,7 +151,7 @@ const RightPhoneContainer = styled(LeftContainer)`
   }
 `;
 
-const WhiteBlock = styled.a`
+const WhiteBackgroundImg = styled.a`
   display: block;
   width: 170px;
   height: 365px;
@@ -223,7 +223,7 @@ const SectionSubHeader = styled.div`
   }
 `;
 
-const LeftLightGreenBlock = styled.div`
+const LeftLightGreenBackgroundBlock = styled.div`
   background-color: #407c5112;
   height: 735px;
   width: 753px;
@@ -236,7 +236,7 @@ const LeftLightGreenBlock = styled.div`
   }
 `;
 
-const RightLightGreenBlock = styled.div`
+const RightLightGreenBackgroundBlock = styled.div`
   background-color: #407c5112;
   height: 735px;
   width: 753px;
@@ -300,19 +300,19 @@ const AccessibilityLink = styled(Link)`
 
 const YumYum = () => {
   return (
-    <LeftLightGreenBlock>
+    <LeftLightGreenBackgroundBlock>
       <AccessibilityLink to="/projects/yumyum">
         <LeftContainer>
           <LeftPhoneContainer>
             <>
               <Screenshots src={YumYumImg1} alt="YumYumScrShot1"></Screenshots>
               <Screenshots src={YumYumImg2} alt="YumYumScrShot2"></Screenshots>
-              <div className="whiteBlockAndImageContainer">
+              <div className="WhiteBackgroundImgAndImageContainer">
                 <Screenshots
                   src={ImgOfPhysicalPhone}
                   alt="physical-phone"
                 ></Screenshots>
-                <WhiteBlock />
+                <WhiteBackgroundImg />
                 <Screenshots
                   src={YumYumImg3}
                   alt="image-inside-of-phone"
@@ -327,13 +327,13 @@ const YumYum = () => {
           </LeftPhoneContainer>
         </LeftContainer>
       </AccessibilityLink>
-    </LeftLightGreenBlock>
+    </LeftLightGreenBackgroundBlock>
   );
 };
 
 const KKFC = () => {
   return (
-    <RightLightGreenBlock>
+    <RightLightGreenBackgroundBlock>
       <AccessibilityLink to="/projects/nonprofit">
         <RightContainer>
           <RightPhoneContainer>
@@ -346,7 +346,7 @@ const KKFC = () => {
               </SectionHeader>
             </RightHeaderContainer>
             <>
-              <div className="whiteBlockAndImageContainer">
+              <div className="WhiteBackgroundImgAndImageContainer">
                 <PhysicalPhone
                   src={ImgOfPhysicalPhone}
                   alt="physical-phone"
@@ -361,13 +361,13 @@ const KKFC = () => {
           </RightPhoneContainer>
         </RightContainer>
       </AccessibilityLink>
-    </RightLightGreenBlock>
+    </RightLightGreenBackgroundBlock>
   );
 };
 
 const Joblify = () => {
   return (
-    <LeftLightGreenBlock>
+    <LeftLightGreenBackgroundBlock>
       <AccessibilityLink to="/projects/joblify">
         <LeftContainer>
           <LeftPhoneContainer>
@@ -376,12 +376,12 @@ const Joblify = () => {
               alt="joblify_home_screenshot"
               className="joblifyScreenshot"
             ></Screenshots>
-            <div className="whiteBlockAndImageContainer">
+            <div className="WhiteBackgroundImgAndImageContainer">
               <Screenshots
                 src={ImgOfPhysicalPhone}
                 alt="physical-phone"
               ></Screenshots>
-              <WhiteBlock />
+              <WhiteBackgroundImg />
               <Screenshots
                 src={Joblify2}
                 alt="image-inside-of-phone"
@@ -395,13 +395,13 @@ const Joblify = () => {
           </LeftPhoneContainer>
         </LeftContainer>
       </AccessibilityLink>
-    </LeftLightGreenBlock>
+    </LeftLightGreenBackgroundBlock>
   );
 };
 
 const MontanaStateParks = () => {
   return (
-    <RightLightGreenBlock style={{ marginBottom: "250px" }}>
+    <RightLightGreenBackgroundBlock style={{ marginBottom: "250px" }}>
       <AccessibilityLink to="/projects/montana">
         <RightContainer>
           <RightPhoneContainer>
@@ -413,7 +413,7 @@ const MontanaStateParks = () => {
                 Montana State Parks
               </SectionHeader>
             </RightHeaderContainer>
-            <div className="whiteBlockAndImageContainer">
+            <div className="WhiteBackgroundImgAndImageContainer">
               <PhysicalPhone
                 src={ImgOfPhysicalPhone}
                 alt="physical-phone"
@@ -433,7 +433,7 @@ const MontanaStateParks = () => {
           </RightPhoneContainer>
         </RightContainer>
       </AccessibilityLink>
-    </RightLightGreenBlock>
+    </RightLightGreenBackgroundBlock>
   );
 };
 
