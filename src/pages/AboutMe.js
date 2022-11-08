@@ -1,6 +1,9 @@
 import React from "react";
 import { ContentWrapper } from "../components/ContentWrapper";
 import styled from "styled-components";
+import { skills, tools, workexp, education, languages } from "../traits";
+
+const CenterContent = styled.div``;
 
 const TitleFontType = styled.h4`
   color: #919191;
@@ -19,9 +22,44 @@ const PurpleBackgroundImg = styled.div`
   background-color: #b5bcf0;
 `;
 
-const AboutMe = () => {
+const HorizontalLineBreak = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 850px;
+  height: 1px;
+  background-color: #c7c7c7;
+  margin: 20px 0;
+`;
+
+const TraitCont = styled.div`
+  display: flex;
+`;
+
+const TraitTitle = styled.h1`
+  color: #919191;
+  font-size: 14px;
+  @media only screen and (max-width: 768px) {
+    font-size: 18px;
+    margin-top: 80px;
+  }
+`;
+
+const TraitListCont = styled.div``;
+const TraitList = styled.li`
+  list-style-type: none;
+`;
+
+const PurpleDot = styled.div`
+  background-color: #b5bcf0;
+  width: 10px;
+  height: 10px;
+  border-radius: 5px;
+`;
+
+const MyStorySection = () => {
   return (
-    <ContentWrapper>
+    <>
       <PurpleBackgroundImg />
       <TitleFontType>My Story</TitleFontType>
       <div>
@@ -39,7 +77,87 @@ const AboutMe = () => {
         goals. In my free time, I enjoy promoting local businesses and
         restaurants through my food blog.
       </div>
-      {/* Line Break Here */}
+    </>
+  );
+};
+
+const Traits = () => {
+  return (
+    <>
+      <TraitCont>
+        <PurpleDot />
+        <TraitListCont>
+          <TraitTitle>Skills</TraitTitle>
+          {skills.map((skill) => {
+            return (
+              <ul>
+                <TraitList>{skill.skill}</TraitList>
+              </ul>
+            );
+          })}
+        </TraitListCont>
+        <TraitListCont>
+          <TraitTitle>Tools</TraitTitle>
+          {tools.map((tool) => {
+            return (
+              <ul>
+                <TraitList>{tool.tool}</TraitList>
+              </ul>
+            );
+          })}
+        </TraitListCont>
+        <TraitListCont>
+          <TraitTitle>Languages</TraitTitle>
+          {languages.map((language) => {
+            return (
+              <ul>
+                <TraitList>{language.language}</TraitList>
+              </ul>
+            );
+          })}
+        </TraitListCont>
+      </TraitCont>
+      <div>
+        <PurpleDot />
+        <TitleFontType>Work Experience</TitleFontType>
+        {workexp.map((job) => {
+          return (
+            <ul>
+              <li>
+                {job.position}
+                {job.company}
+                {job.experience}
+              </li>
+            </ul>
+          );
+        })}
+      </div>
+      <div>
+        <PurpleDot />
+        <TitleFontType>Education</TitleFontType>
+        {education.map((education) => {
+          return (
+            <ul>
+              <TraitList>
+                {education.institution}
+                {education.title}
+              </TraitList>
+            </ul>
+          );
+        })}
+      </div>
+    </>
+  );
+};
+
+const AboutMe = () => {
+  return (
+    <ContentWrapper>
+      <MyStorySection />
+      <CenterContent>
+        <HorizontalLineBreak />
+      </CenterContent>
+      <Traits />
     </ContentWrapper>
   );
 };
