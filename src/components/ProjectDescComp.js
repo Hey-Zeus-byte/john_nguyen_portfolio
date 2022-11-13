@@ -227,12 +227,14 @@ const LeftLightGreenBackgroundBlock = styled.div`
   background-color: #407c5112;
   height: 735px;
   width: 753px;
+  margin-left: 100px;
   margin-top: 150px;
 
   @media only screen and (max-width: 768px) {
     height: 295px;
     width: 100%;
     margin-top: 200px;
+    margin-left: 0;
   }
 `;
 
@@ -242,17 +244,26 @@ const RightLightGreenBackgroundBlock = styled.div`
   width: 753px;
   margin-top: 150px;
   margin-left: auto;
+  margin-right: 100px;
+
+  @media only screen and (max-width: 1180px) {
+    height: 735px;
+    width: 100%;
+    margin-top: 200px;
+    margin-right: -500px;
+  }
 
   @media only screen and (max-width: 768px) {
     height: 295px;
     width: 100%;
     margin-top: 200px;
+    margin-right: 0;
   }
 `;
 
 //Screenshots for the Keep Kids Fire Foundation & Montana State Parks
 const KKFFAndMspScreenshots = styled.img`
-  width: 600px;
+  width: 650px;
   height: 400px;
 
   @media only screen and (max-width: 768px) {
@@ -279,10 +290,11 @@ const PhysicalPhone = styled.img`
 
 const PhysicalLaptopOrMonitor = styled.img`
   position: absolute;
-  top: 45px;
-  left: 12px;
-  width: 110px;
-  height: 195px;
+  top: 25px;
+  left: 9px;
+  width: 115px;
+  height: 235px;
+  border-radius: 5px;
 
   @media only screen and (max-width: 768px) {
     position: relative;
